@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="CiR-mI-9L0" userLabel="rootStack">
+                                <rect key="frame" x="20" y="180.5" width="353" height="516"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steppe_sunrise" id="aVd-Io-wqk" userLabel="coverImageView">
+                                        <rect key="frame" x="0" y="0" width="353" height="353"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aVd-Io-wqk" secondAttribute="height" multiplier="1:1" id="s52-VY-Il4"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" id="5GI-ko-l5x" userLabel="labelsStack">
+                                        <rect key="frame" x="0" y="381" width="353" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steppe Sunrise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GzG-Sd-O2m" userLabel="titleLabel">
+                                                <rect key="frame" x="0" y="0" width="353" height="28.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.110" green="0.110" blue="0.118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aral Waves" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yv5-Sv-GLH" userLabel="artistLabel">
+                                                <rect key="frame" x="0" y="34.66666666666667" width="353" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.431" green="0.431" blue="0.451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" id="JxV-uS-LQj" userLabel="controlsStack">
+                                        <rect key="frame" x="0" y="464" width="353" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="S2n-1k-8kT" userLabel="previousButton">
+                                                <rect key="frame" x="0" y="8" width="117.66666666666667" height="36"/>
+                                                <color key="tintColor" red="0.357" green="0.247" blue="0.851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="Previous"/>
+                                                <state key="normal" image="backward.fill" catalog="system"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                <connections>
+                                                    <action selector="previousTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vmi-vZ-ce7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bnX-8d-yNy" userLabel="playPauseButton">
+                                                <rect key="frame" x="117.66666666666667" y="0" width="117.66666666666667" height="52"/>
+                                                <color key="tintColor" red="0.357" green="0.247" blue="0.851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="Play"/>
+                                                <state key="normal" image="play.fill" catalog="system"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44"/>
+                                                <connections>
+                                                    <action selector="playPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQs-3q-jQY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yuS-vh-8Ia" userLabel="nextButton">
+                                                <rect key="frame" x="235.33333333333334" y="8" width="117.66666666666667" height="36"/>
+                                                <color key="tintColor" red="0.357" green="0.247" blue="0.851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="Next"/>
+                                                <state key="normal" image="forward.fill" catalog="system"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                <connections>
+                                                    <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jeH-ie-Aq2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZiQ-Ma-aNM"/>
+                        <color key="backgroundColor" red="0.969" green="0.961" blue="0.984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CiR-mI-9L0" firstAttribute="leading" secondItem="ZiQ-Ma-aNM" secondAttribute="leading" constant="20" id="leI-77-OZH"/>
+                            <constraint firstItem="ZiQ-Ma-aNM" firstAttribute="trailing" secondItem="CiR-mI-9L0" secondAttribute="trailing" constant="20" id="YrK-Hj-9Zm"/>
+                            <constraint firstItem="CiR-mI-9L0" firstAttribute="centerY" secondItem="ZiQ-Ma-aNM" secondAttribute="centerY" id="ACt-ho-B6T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="Yv5-Sv-GLH" id="OVh-bg-gce"/>
+                        <outlet property="coverImageView" destination="aVd-Io-wqk" id="ae6-Ta-CYx"/>
+                        <outlet property="playPauseButton" destination="bnX-8d-yNy" id="e8S-cl-F75"/>
+                        <outlet property="titleLabel" destination="GzG-Sd-O2m" id="R43-Ti-l3N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="-20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backward.fill" catalog="system" width="128" height="77"/>
+        <image name="forward.fill" catalog="system" width="128" height="77"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="steppe_sunrise" width="800" height="800"/>
+        <image name="almaty_nights" width="800" height="800"/>
+        <image name="mountain_air" width="800" height="800"/>
+        <image name="city_lights" width="800" height="800"/>
+        <image name="coffee_break" width="800" height="800"/>
+        <image name="caspian_breeze" width="800" height="800"/>
+        <image name="night_drive" width="800" height="800"/>
+        <image name="golden_hour" width="800" height="800"/>
+        <image name="snow_leopard" width="800" height="800"/>
+        <image name="last_train_home" width="800" height="800"/>
+    </resources>
+</document>
